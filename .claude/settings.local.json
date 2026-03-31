@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude usage:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(curl -s http://localhost:3456/api/agents)",
+      "Bash(openclaw sessions:*)",
+      "Bash(pnpm start:*)",
+      "Bash(pnpm build:*)",
+      "Bash(npx tsx:*)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3456)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm remove:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\43938\\pixel-office"
+    ]
+  }
+}

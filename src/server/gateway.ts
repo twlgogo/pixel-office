@@ -62,8 +62,8 @@ export class GatewayClientWrapper {
     return new Promise((resolve) => {
       exec(
         `openclaw ${args}`,
-        { timeout, env: { ...process.env, NO_COLOR: '1' }, shell: true },
-        (error, stdout) => {
+        { timeout: timeout, env: { ...process.env, NO_COLOR: '1' }, shell: true },
+        (error: any, stdout: string) => {
           if (error && !stdout) { resolve(null); return; }
           try {
             const s = stdout.indexOf('{');
@@ -138,7 +138,7 @@ export class GatewayClientWrapper {
       const cmd = `openclaw agent chat --agent "${sessionKey}" --message "${message.replace(/"/g, '\\"')}"`;
       console.log(`[Gateway] 发送消息: ${message.substring(0, 50)}`);
       exec(cmd, { timeout: 30000, env: { ...process.env, NO_COLOR: '1' }, shell: true },
-        (error, stdout, stderr) => {
+        (error: any, stdout: string, stderr: string) => {
           if (error) {
             resolve({ success: false, error: error.message });
           } else {
